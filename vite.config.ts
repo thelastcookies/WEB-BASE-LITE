@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
     Object.assign(conf, {
       server: {
         host: '0.0.0.0',
-        port: 8194,
+        port: 8196,
       },
     });
   } else if (command === 'build') {

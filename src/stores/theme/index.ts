@@ -1,4 +1,5 @@
 import 'dayjs/locale/zh-cn';
+import { theme } from 'ant-design-vue';
 import type { Handler } from 'mitt';
 
 /**

@@ -1,6 +1,6 @@
-# WEB-BASE
+# WEB-BASE-LITE
 
-一个使用 Vue3+s 技术栈的 Web 浏览器端模板项目。
+一个使用轻量级的 Vue3+s 技术栈的 Web 浏览器端模板项目。
 
 ## 编写目的
 

@@ -7,10 +7,12 @@ import type { RouteLocationNormalized } from 'vue-router';
 
 const emitter = mitt();
 
+const key = Symbol('ROUTE_CHANGE');
+
 let latestRoute: RouteLocationNormalized;
 
 export const setRouteEmitter = (to: RouteLocationNormalized) => {
-  emitter.emit(ROUTE_CHANGE_KEY, to);
+  emitter.emit(key, to);
   latestRoute = to;
 };
 
@@ -18,12 +20,12 @@ export const listenRouteChange = (
   handler: (route: RouteLocationNormalized) => void,
   immediate = true,
 ) => {
-  emitter.on(ROUTE_CHANGE_KEY, handler as Handler);
+  emitter.on(key, handler as Handler);
   if (immediate && latestRoute) {
     handler(latestRoute);
   }
 };
 
 export const removeRouteListener = () => {
-  emitter.off(ROUTE_CHANGE_KEY);
+  emitter.off(key);
 };

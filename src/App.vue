@@ -4,7 +4,6 @@ import zhCN from 'ant-design-vue/es/locale/zh_CN';
 const themeStore = useThemeStore();
 const { listenThemeChange } = themeStore;
 const { designToken, themeAlgorithm } = storeToRefs(themeStore);
-useEnvironmentCheck();
 
 const { useToken } = theme;
 const { token } = useToken();
