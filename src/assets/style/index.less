@@ -1,0 +1,151 @@
+@import '@/assets/font/font.css';
+@import "./theme/light.css" (prefers-color-scheme: light);
+@import "./theme/dark.css" (prefers-color-scheme: dark);
+@import "./ant-fine-tuning";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+
+  color-scheme: light dark;
+  color: var(--colorText);
+  background-color: var(--colorBgContainer);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  height: 100%;
+
+  --zIndexLevel1: 100;
+  --zIndexLevel2: 200;
+  --zIndexLevel3: 300;
+  --zIndexLevel4: 400;
+  --zIndexLevel5: 500;
+  --zIndexLevel6: 600;
+  --zIndexLevel7: 700;
+  --zIndexLevel8: 800;
+  --zIndexLevel9: 900;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  //--duration: 0.5s;
+  //--timing: ease;
+  //transition: color var(--duration) var(--timing),
+  //background-color var(--duration) var(--timing);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * 几种常用的 <transition> 过渡样式
+ */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--motionDurationMid) ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all var(--motionDurationMid) ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all var(--motionDurationMid) cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.2s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 0.2s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 毛玻璃背景样式
+.bg-frosted-glass {
+
+}
+
+// 像素点阵背景样式
+.bg-pixel-matrix {
+  background-image: radial-gradient(transparent 1px, var(--colorBgContainer) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+  z-index: 12;
+}
+
+/* 滚动条宽高 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* 滚动条的轨道颜色、内阴影及圆角 */
+::-webkit-scrollbar-track {
+  background-color: var(--colorBgContainer);
+}
+
+/* 滚动条颜色、内阴影及圆角 */
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px var(--colorFill);
+  background-color: var(--colorFill);
+  border: 2px solid var(--colorFillSecondary);
+  border-radius: var(--borderRadiusLG);
+}
+
+/* 鼠标悬停时的滚动条样式 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--colorFillSecondary);
+}
+
+/* 定义两端按钮的样式 */
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}

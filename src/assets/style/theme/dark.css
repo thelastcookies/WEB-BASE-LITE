@@ -1,0 +1,13 @@
+:root {
+  /* Antdv 表格行背景色 */
+  --tableTrBg: #141414;
+  --tableTrStripedBg: #1B1B1B;
+
+  /* input 自动完成背景填充色 */
+  --colorWebkitAutofillBg: rgba(70, 90, 126, 0.4)
+}
+
+/* 针对 Safari 浏览器的自动完成背景填充色 */
+.safari {
+  --colorWebkitAutofillBg: rgb(250, 255, 189);
+}

@@ -1,0 +1,43 @@
+/**
+ * 用于 ant-design-vue 的全局样式调整
+ */
+
+// 调整使用 BaseIcon 时的 Button 组件的 label 左边距
+.ant-btn > .base-icon + span, .ant-btn > span + .base-icon {
+  margin-inline-start: 6px;
+}
+
+// Spin 组件内部 container
+.ant-spin-container {
+  height: 100%;
+  width: 100%;
+}
+
+// Table 组件斑马纹
+.ant-table .ant-table-tbody tr {
+  &:nth-child(odd) {
+    background-color: var(--tableTrBg);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--tableTrStripedBg);
+  }
+}
+
+// Form 组件 disabled 样式
+.ant-input-disabled {
+  color: var(--colorTextSecondary) !important;
+}
+
+.ant-select-disabled {
+  .ant-select-selector {
+    color: var(--colorTextSecondary) !important;
+  }
+}
+
+// 修复默认样式的鼠标指针闪烁问题
+.ant-form-item-tooltip {
+  .anticon[tabindex] {
+    cursor: help
+  }
+}
