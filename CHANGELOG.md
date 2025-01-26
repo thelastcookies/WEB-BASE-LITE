@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0 (2025-01-26)
+
+
+### Features
+
+* 新增传递到父项目的消息提醒 ([aae0e18](https://github.com/thelastcookies/WEB-BASE-LITE/commit/aae0e183edba97814c77513efe2942c05a6a545f))
+
 ## [0.24.0](https://github.com/thelastcookies/WEB-BASE/compare/v0.23.0...v0.24.0) (2024-12-24)
 
 
