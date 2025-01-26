@@ -31,9 +31,7 @@ const emit = defineEmits<{
 const slots = useSlots();
 const slotsCount = Object.keys(slots).length;
 
-const { deviceType } = useAppStore();
-
-const ITEM_IN_LINE = deviceType === 'desktop' ? props.itemInLine : 1;
+const ITEM_IN_LINE = props.itemInLine;
 const SPAN = 24 / ITEM_IN_LINE;
 
 const formRef = ref<FormInstance>();
@@ -72,7 +70,13 @@ const onFinish = () => {
 
 const onFinishFailed = ({ errorFields }: ValidateErrorEntity) => {
   if (errorFields && errorFields.length > 0) {
-    message.error(errorFields[0].errors[0]);
+    useParentMessage({
+      type: 'message',
+      content: {
+        type: 'error',
+        content: errorFields[0].errors[0],
+      },
+    });
   }
 };
 
